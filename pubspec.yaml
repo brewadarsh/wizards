@@ -9,7 +9,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  # For state management.
   flutter_bloc: ^9.1.0
+
+  # For internationalization of the application.
   intl: ^0.20.2
 
 dev_dependencies:
@@ -19,3 +23,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+flutter_intl:
+  enabled: true
