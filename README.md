@@ -1,5 +1,5 @@
 ## Wizards
-A flutter-based web application to demonstrate the use of Keycloak.
+Exploring [Keycloak](https://www.keycloak.org/) using Flutter-web.
 
 ### Dependencies
 For future-proofing, I've used packages maintained by the Dart or Flutter team.
