@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../../core/constants/asset_constants.dart';
 import '../../core/constants/padding_constants.dart';
 import '../../core/extensions/context_extensions.dart';
+import '../../core/utils/app_injector.dart';
+import '../blocs/landing/landing_cubit.dart';
 import '../widgets/landing_button.dart';
 
 class LandingPage extends StatefulWidget {
@@ -13,10 +15,12 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
+  late final LandingCubit _cubit;
   late final ImageProvider _background;
 
   @override
   void initState() {
+    _cubit = AppInjector.get<LandingCubit>();
     _background = const AssetImage(AssetConstants.hogwartsLanding);
     super.initState();
   }
@@ -25,6 +29,12 @@ class _LandingPageState extends State<LandingPage> {
   void didChangeDependencies() {
     precacheImage(_background, context);
     super.didChangeDependencies();
+  }
+
+  @override
+  void dispose() {
+    _cubit.close();
+    super.dispose();
   }
 
   @override
@@ -64,7 +74,10 @@ class _LandingPageState extends State<LandingPage> {
                 ],
               ),
             ),
-            const LandingButton(),
+            GestureDetector(
+              onTap: _cubit.authenticate,
+              child: const LandingButton(),
+            ),
           ],
         ),
       ),
