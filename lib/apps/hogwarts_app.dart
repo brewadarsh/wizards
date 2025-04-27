@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-
-import '../generated/l10n.dart';
-import '../interface/routes/app_router.dart';
+import '../layers/core/utils/app_color.dart';
+import '../layers/core/utils/app_fonts.dart';
+import '../layers/presentation/router/hogwarts_router.dart';
+import '../../../generated/app_localizations.dart';
 
 class HogwartsApp extends StatelessWidget {
   const HogwartsApp({super.key});
@@ -9,9 +10,13 @@ class HogwartsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      theme: ThemeData.dark(),
-      localizationsDelegates: [S.delegate],
-      routerConfig: AppRouter.hogwartsRoute,
+      routerConfig: HogwartsRouter.config,
+      supportedLocales: AppLocalizations.supportedLocales,
+      theme: ThemeData(
+        fontFamily: AppFonts.montserrat,
+        colorScheme: AppColor.hogwartsScheme,
+      ),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
     );
   }
 }
