@@ -8,5 +8,11 @@ class AuthenticationRepoIMPL implements AuthenticationRepo {
   const AuthenticationRepoIMPL({required this.service});
 
   @override
-  Future<void> authenticate() => service.authenticate();
+  Future<bool> validateAccessToken() => service.validateAccessToken();
+
+  @override
+  Future<void> getAuthCode() => service.getAuthCode();
+
+  @override
+  Future<void> getAccessToken() => service.getAccessToken();
 }

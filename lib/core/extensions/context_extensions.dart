@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../utils/app_locale_fallback.dart';
-import '../../../generated/app_localizations.dart';
+import '../../generated/app_localizations.dart';
 
 extension ContextExtensions on BuildContext {
   Size get size => MediaQuery.sizeOf(this);

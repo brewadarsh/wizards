@@ -3,6 +3,7 @@ class AssetConstants {
   static const String imagePath = "assets/images";
   static const String lottiePath = "assets/lottie";
 
+  static const String loading = "$lottiePath/loading.json";
   static const String highlight = "$lottiePath/highlight.json";
   static const String hogwartsLanding = "$imagePath/hogwarts_landing.jpg";
 }

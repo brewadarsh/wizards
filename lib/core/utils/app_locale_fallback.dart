@@ -1,4 +1,4 @@
-import '../../../generated/app_localizations.dart';
+import '../../generated/app_localizations.dart';
 
 class AppLocaleFallback extends AppLocalizations {
   AppLocaleFallback(super.locale);

@@ -29,9 +29,6 @@ dependencies:
   # To establish connection between the OAuth 2.0 client and application.
   openid_client: ^0.4.9
 
-  # To create signatures.
-  crypto: ^3.0.6
-
   # For making HTTP requests.
   http: ^1.3.0
 
